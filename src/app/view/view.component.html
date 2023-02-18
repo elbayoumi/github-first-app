@@ -1,0 +1,42 @@
+<p>view works!</p>
+
+
+ <section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card" id="list1" style="border-radius: .75rem; background-color: #eff1f2;">
+          <div class="card-body py-4 px-4 px-md-5">
+
+            <p class="h1 text-center mt-3 mb-4 pb-3 text-primary">
+              <i class="fas fa-check-square me-1"></i>
+              <u>My Todo-s</u>
+            </p>
+
+            <div class="pb-2">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-row align-items-center">
+                    <input type="text" class="form-control form-control-lg" id="exampleFormControlInput1"
+                      placeholder="Add new..." #task>
+                    <a href="#!" data-mdb-toggle="tooltip" title="Set due date"><i
+                        class="fas fa-calendar-alt fa-lg me-3"></i></a>
+                    <div>
+                      <button type="button" class="btn btn-primary" (click)="addTask(task.value)">Add</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <hr class="my-4">
+            <ul *ngFor="let t of tasks ;  let i = index ">
+             <li  [ngStyle]="{'display':t.name?'block':'none'}">{{i+1}}- {{t.name}}   <button type="button" class="btn btn-danger"  (click)="rmTask(t.id)">remove</button>
+</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
